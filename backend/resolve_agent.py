@@ -77,6 +77,7 @@ def resolve_customer_issue(
     customer_issue: str,
     bank_id: Optional[str] = None,
     model: Optional[str] = None,
+    language: str = "English",
 ) -> ResolveResponse:
     """
     Analyzes a customer issue by recalling relevant historical support experiences
@@ -87,6 +88,7 @@ def resolve_customer_issue(
         customer_issue: The issue description reported by the customer.
         bank_id: Optional Hindsight memory bank ID (defaults to resolveiq-support).
         model: Optional Groq model identifier (defaults to openai/gpt-oss-120b).
+        language: Language for the generated recommendation.
 
     Returns:
         ResolveResponse containing the recommendation, recalled memories count,
@@ -115,7 +117,8 @@ def resolve_customer_issue(
 Historical Support Memories from Hindsight:
 {context_text}
 
-Please provide an experience-informed support recommendation according to the required sections."""
+Please provide an experience-informed support recommendation according to the required sections.
+Write the complete recommendation in {language}."""
 
     # Step 3: Call Groq LLM
     client = Groq(api_key=groq_api_key)

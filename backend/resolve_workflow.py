@@ -7,6 +7,7 @@ def handle_customer_issue(
     customer_issue: str,
     bank_id: Optional[str] = None,
     model: Optional[str] = None,
+    language: str = "English",
 ) -> Dict[str, Any]:
     """
     Handles an incoming customer support issue:
@@ -28,6 +29,7 @@ def handle_customer_issue(
         customer_issue=customer_issue,
         bank_id=bank_id,
         model=model,
+        language=language,
     )
 
     return {

@@ -58,6 +58,13 @@ const T = {
     loopAction: "Action",
     loopOutcome: "Outcome",
     loopLearning: "Learning",
+    loopIssue: "Customer Issue",
+    loopRecall: "Hindsight Recall",
+    loopRecommendation: "AI Recommendation",
+    hindsightLearning: "Hindsight Learning",
+    recommendationUsesMemories: (count) => `Recommendation informed by ${count} recalled Hindsight ${count === 1 ? "experience" : "experiences"}.`,
+    recommendationNoMemories: "No similar memory was recalled; recommendation is based on the current issue.",
+    experienceStored: "New experience stored in Hindsight Memory.",
     loopImproved: "Improved Action",
     issuePlaceholder: "e.g. My account was charged twice for the same order and I cannot reach anyone to get a refund...",
     actionPlaceholder: "Describe what action was taken to resolve the issue…",
@@ -95,6 +102,13 @@ const T = {
     loopAction: "చర్య",
     loopOutcome: "ఫలితం",
     loopLearning: "నేర్పు",
+    loopIssue: "కస్టమర్ సమస్య",
+    loopRecall: "Hindsight జ్ఞాపకాలు",
+    loopRecommendation: "AI సిఫార్సు",
+    hindsightLearning: "Hindsight అభ్యాసం",
+    recommendationUsesMemories: (count) => `${count} గత అనుభవాల ఆధారంగా సిఫార్సు రూపొందించబడింది.`,
+    recommendationNoMemories: "సారూప్య జ్ఞాపకం లభించలేదు; ప్రస్తుత సమస్య ఆధారంగా సిఫార్సు రూపొందించబడింది.",
+    experienceStored: "కొత్త అనుభవం Hindsight Memoryలో నిల్వ చేయబడింది.",
     loopImproved: "మెరుగైన చర్య",
     issuePlaceholder: "ఉదా: నా ఖాతా నుండి రెండుసార్లు చార్జ్ చేయబడింది మరియు రిఫండ్ పొందలేకపోతున్నాను...",
     actionPlaceholder: "సమస్యను పరిష్కరించడానికి ఏ చర్య తీసుకున్నారో వివరించండి…",
@@ -132,6 +146,13 @@ const T = {
     loopAction: "कार्रवाई",
     loopOutcome: "परिणाम",
     loopLearning: "सीखना",
+    loopIssue: "ग्राहक की समस्या",
+    loopRecall: "Hindsight स्मृति",
+    loopRecommendation: "AI सुझाव",
+    hindsightLearning: "Hindsight सीख",
+    recommendationUsesMemories: (count) => `${count} पिछले अनुभवों के आधार पर सुझाव दिया गया।`,
+    recommendationNoMemories: "समान स्मृति नहीं मिली; सुझाव वर्तमान समस्या पर आधारित है।",
+    experienceStored: "नया अनुभव Hindsight Memory में संग्रहीत किया गया।",
     loopImproved: "बेहतर कार्रवाई",
     issuePlaceholder: "उदा: मेरे खाते से दो बार चार्ज किया गया और मुझे रिफंड नहीं मिल रहा...",
     actionPlaceholder: "समस्या हल करने के लिए क्या कार्रवाई की गई, विवरण दें…",
@@ -169,6 +190,13 @@ const T = {
     loopAction: "ಕ್ರಮ",
     loopOutcome: "ಫಲಿತಾಂಶ",
     loopLearning: "ಕಲಿಕೆ",
+    loopIssue: "ಗ್ರಾಹಕರ ಸಮಸ್ಯೆ",
+    loopRecall: "Hindsight ನೆನಪುಗಳು",
+    loopRecommendation: "AI ಶಿಫಾರಸು",
+    hindsightLearning: "Hindsight ಕಲಿಕೆ",
+    recommendationUsesMemories: (count) => `${count} ಹಿಂದಿನ ಅನುಭವಗಳ ಆಧಾರದ ಮೇಲೆ ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ.`,
+    recommendationNoMemories: "ಹೋಲುವ ನೆನಪು ಸಿಗಲಿಲ್ಲ; ಶಿಫಾರಸು ಪ್ರಸ್ತುತ ಸಮಸ್ಯೆಯನ್ನು ಆಧರಿಸಿದೆ.",
+    experienceStored: "ಹೊಸ ಅನುಭವವನ್ನು Hindsight Memoryಯಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ.",
     loopImproved: "ಸುಧಾರಿತ ಕ್ರಮ",
     issuePlaceholder: "ಉದಾ: ನನ್ನ ಖಾತೆಯಿಂದ ಎರಡು ಬಾರಿ ಶುಲ್ಕ ವಿಧಿಸಲಾಗಿದೆ ಮತ್ತು ಮರುಪಾವತಿ ಪಡೆಯಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ...",
     actionPlaceholder: "ಸಮಸ್ಯೆ ಪರಿಹರಿಸಲು ತೆಗೆದುಕೊಂಡ ಕ್ರಮವನ್ನು ವಿವರಿಸಿ…",
@@ -206,6 +234,13 @@ const T = {
     loopAction: "நடவடிக்கை",
     loopOutcome: "முடிவு",
     loopLearning: "கற்றல்",
+    loopIssue: "வாடிக்கையாளர் பிரச்சனை",
+    loopRecall: "Hindsight நினைவுகள்",
+    loopRecommendation: "AI பரிந்துரை",
+    hindsightLearning: "Hindsight கற்றல்",
+    recommendationUsesMemories: (count) => `${count} முந்தைய அனுபவங்களின் அடிப்படையில் பரிந்துரை உருவாக்கப்பட்டது.`,
+    recommendationNoMemories: "ஒத்த நினைவு கிடைக்கவில்லை; தற்போதைய பிரச்சனையின் அடிப்படையில் பரிந்துரை உருவாக்கப்பட்டது.",
+    experienceStored: "புதிய அனுபவம் Hindsight Memory-யில் சேமிக்கப்பட்டது.",
     loopImproved: "மேம்பட்ட நடவடிக்கை",
     issuePlaceholder: "எ.கா: என் கணக்கிலிருந்து இரண்டு முறை கட்டணம் வசூலிக்கப்பட்டது மற்றும் பணத்தை திரும்ப பெற முடியவில்லை...",
     actionPlaceholder: "சிக்கலை தீர்க்க எடுக்கப்பட்ட நடவடிக்கையை விவரிக்கவும்…",
@@ -261,7 +296,7 @@ function MarkdownContent({ content }) {
 }
 
 // ─── Language Selector ────────────────────────────────────────────
-function LanguageSelector({ lang, setLang, t }) {
+function LanguageSelector({ lang, setLang, t, disabled }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -272,6 +307,7 @@ function LanguageSelector({ lang, setLang, t }) {
         <button
           className="lang-btn"
           onClick={() => setOpen(o => !o)}
+          disabled={disabled}
           type="button"
         >
           {LANG_LABELS[lang]}
@@ -284,6 +320,7 @@ function LanguageSelector({ lang, setLang, t }) {
                 key={key}
                 className={`lang-menu-item ${lang === key ? "active" : ""}`}
                 onClick={() => { setLang(key); setOpen(false) }}
+                disabled={disabled}
                 type="button"
               >
                 {LANG_LABELS[key]}
@@ -297,7 +334,7 @@ function LanguageSelector({ lang, setLang, t }) {
 }
 
 // ─── Category Chips ───────────────────────────────────────────────
-function CategoryChips({ lang, onSelect, t }) {
+function CategoryChips({ lang, onSelect, t, disabled }) {
   const labels = CAT_LABELS[lang]
   return (
     <div className="cat-wrap">
@@ -308,6 +345,7 @@ function CategoryChips({ lang, onSelect, t }) {
             key={cat.key}
             className="cat-chip"
             onClick={() => onSelect(ISSUE_STARTERS[cat.key])}
+            disabled={disabled}
             type="button"
           >
             <span className="cat-chip-icon">{cat.icon}</span>
@@ -368,10 +406,10 @@ function IssueSection({ issue, setIssue, onAnalyze, loading, lang, setLang, t })
             <div className="card-subtitle">{t.issueSubtitle}</div>
           </div>
         </div>
-        <LanguageSelector lang={lang} setLang={setLang} t={t} />
+        <LanguageSelector lang={lang} setLang={setLang} t={t} disabled={loading} />
       </div>
 
-      <CategoryChips lang={lang} onSelect={text => setIssue(text)} t={t} />
+      <CategoryChips lang={lang} onSelect={text => setIssue(text)} t={t} disabled={loading} />
 
       <textarea
         className="issue-textarea"
@@ -403,8 +441,8 @@ function IssueSection({ issue, setIssue, onAnalyze, loading, lang, setLang, t })
 }
 
 // ─── Memory Section ───────────────────────────────────────────────
-function MemorySection({ memories, t }) {
-  const count = memories ? memories.length : 0
+function MemorySection({ memories, recalledCount, t }) {
+  const count = recalledCount ?? (memories ? memories.length : 0)
   return (
     <div className="card fade-up">
       <div className="memory-header-row">
@@ -460,7 +498,7 @@ function MemorySection({ memories, t }) {
 }
 
 // ─── Recommendation ───────────────────────────────────────────────
-function RecommendationSection({ recommendation, t }) {
+function RecommendationSection({ recommendation, memoryCount, t }) {
   const content = typeof recommendation === "string"
     ? recommendation
     : recommendation?.recommendation || recommendation?.content || ""
@@ -470,7 +508,9 @@ function RecommendationSection({ recommendation, t }) {
         <div className="card-icon amber"><Lightbulb size={18} /></div>
         <div>
           <div className="card-title">{t.aiRec}</div>
-          <div className="card-subtitle">{t.aiRecSubtitle}</div>
+          <div className="card-subtitle">
+            {memoryCount > 0 ? t.recommendationUsesMemories(memoryCount) : t.recommendationNoMemories}
+          </div>
         </div>
       </div>
       <div className="recommendation-content">
@@ -489,6 +529,7 @@ function OutcomeSection({ issue, onSuccess, t }) {
   const [error, setError] = useState("")
 
   const handleRecord = async () => {
+    if (loading) return
     if (!actionTaken.trim() || !outcome || !verificationResult.trim()) {
       setError(t.fillAll)
       return
@@ -510,7 +551,11 @@ function OutcomeSection({ issue, onSuccess, t }) {
         const err = await res.json().catch(() => ({}))
         throw new Error(err.detail || `Server error: ${res.status}`)
       }
-      onSuccess({ actionTaken: actionTaken.trim(), outcome })
+      const responseData = await res.json()
+      if (!responseData.success) {
+        throw new Error(responseData.message || "ResolveIQ could not store this outcome in Hindsight Memory.")
+      }
+      onSuccess({ actionTaken: actionTaken.trim(), outcome, retention: responseData })
     } catch (e) {
       setError(e.message || "Failed to record outcome. Please try again.")
     } finally {
@@ -577,7 +622,7 @@ function OutcomeSection({ issue, onSuccess, t }) {
       </div>
 
       {error && (
-        <div className="error-banner">
+        <div className="error-banner" role="alert">
           <AlertCircle size={16} style={{ flexShrink: 0, marginTop: 1 }} />
           {error}
         </div>
@@ -605,30 +650,39 @@ function OutcomeSection({ issue, onSuccess, t }) {
 }
 
 // ─── Success State ─────────────────────────────────────────────────
-function SuccessState({ onReset, recordedOutcome, t }) {
+function SuccessState({ onReset, recordedOutcome, issue, recalledMemoryCount, t }) {
+  const steps = [
+    { label: t.loopIssue, icon: <MessageSquare size={19} />, tone: "blue", detail: issue },
+    { label: t.loopRecall, icon: <Brain size={19} />, tone: "purple", detail: t.memoriesRecalled(recalledMemoryCount) },
+    {
+      label: t.loopRecommendation,
+      icon: <Lightbulb size={19} />,
+      tone: "amber",
+      detail: recalledMemoryCount > 0 ? t.recommendationUsesMemories(recalledMemoryCount) : t.recommendationNoMemories,
+    },
+    {
+      label: t.loopOutcome,
+      icon: <CheckCircle2 size={19} />,
+      tone: "green",
+      detail: <><strong>{recordedOutcome.outcome}</strong><span>{recordedOutcome.actionTaken}</span></>,
+    },
+    { label: t.hindsightLearning, icon: <Brain size={19} />, tone: "purple", detail: t.experienceStored },
+  ]
+
   return (
     <div className="success-card fade-up">
       <div className="success-icon">🧠</div>
       <div className="success-title">{t.successTitle}</div>
       <div className="success-desc">{t.successDesc}</div>
 
-      <div className="learning-loop">
-        <div className="loop-step">
-          <div className="loop-step-icon blue">⚡</div>
-          <div className="loop-step-label">{t.loopAction}</div>
-          <div className="loop-step-detail">{recordedOutcome.actionTaken}</div>
-        </div>
-        <div className="loop-arrow">→</div>
-        <div className="loop-step">
-          <div className="loop-step-icon green">✓</div>
-          <div className="loop-step-label">{t.loopOutcome}</div>
-          <div className="loop-step-detail">{recordedOutcome.outcome}</div>
-        </div>
-        <div className="loop-arrow">→</div>
-        <div className="loop-step">
-          <div className="loop-step-icon purple">🧠</div>
-          <div className="loop-step-label">{t.loopLearning}</div>
-        </div>
+      <div className="learning-loop" aria-label={`${t.loopIssue} to ${t.hindsightLearning}`}>
+        {steps.map(step => (
+          <div className="loop-step" key={step.label}>
+            <div className={`loop-step-icon ${step.tone}`}>{step.icon}</div>
+            <div className="loop-step-label">{step.label}</div>
+            <div className="loop-step-detail">{step.detail}</div>
+          </div>
+        ))}
       </div>
 
       <button className="btn btn-reset" onClick={onReset} style={{ marginTop: 24 }}>
@@ -652,11 +706,12 @@ export default function App() {
   const t = T[lang]
 
   const handleAnalyze = async () => {
-    if (!issue.trim()) return
+    if (!issue.trim() || analyzing) return
     setAnalyzing(true)
     setError("")
     setResult(null)
     setSuccess(false)
+    setRecordedOutcome(null)
     setRecordedOutcome(null)
 
     try {
@@ -686,9 +741,11 @@ export default function App() {
     setResult(null)
     setSuccess(false)
     setError("")
+    setRecordedOutcome(null)
   }
 
-  const memories = result?.memories || result?.hindsight_memories || result?.relevant_memories || []
+  const memories = result?.recalled_memories || result?.memories || result?.hindsight_memories || result?.relevant_memories || []
+  const recalledMemoryCount = result?.recalled_memories_count ?? memories.length
   const recommendation = result?.recommendation || result?.agent_response || result
 
   return (
@@ -707,7 +764,7 @@ export default function App() {
       />
 
       {analyzeError && (
-        <div className="error-banner fade-up">
+        <div className="error-banner fade-up" role="alert">
           <AlertCircle size={16} style={{ flexShrink: 0, marginTop: 1 }} />
           {analyzeError}
         </div>
@@ -721,8 +778,8 @@ export default function App() {
             <div className="section-divider-line" />
           </div>
 
-          <MemorySection memories={memories} t={t} />
-          <RecommendationSection recommendation={recommendation} t={t} />
+          <MemorySection memories={memories} recalledCount={recalledMemoryCount} t={t} />
+          <RecommendationSection recommendation={recommendation} memoryCount={recalledMemoryCount} t={t} />
           <OutcomeSection
             issue={issue}
             onSuccess={outcome => { setRecordedOutcome(outcome); setSuccess(true) }}
@@ -731,7 +788,15 @@ export default function App() {
         </>
       )}
 
-      {success && <SuccessState onReset={handleReset} recordedOutcome={recordedOutcome} t={t} />}
+      {success && (
+        <SuccessState
+          onReset={handleReset}
+          recordedOutcome={recordedOutcome}
+          issue={issue}
+          recalledMemoryCount={recalledMemoryCount}
+          t={t}
+        />
+      )}
     </div>
   )
 }

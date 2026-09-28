@@ -1,5 +1,5 @@
 import sys
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Literal
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
@@ -32,6 +32,10 @@ class ResolveRequest(BaseModel):
         min_length=3,
         description="The customer problem description or support inquiry.",
         examples=["Customer is getting a 504 Gateway Timeout when exporting a large analytics report."]
+    )
+    language: Literal["English", "Telugu", "Hindi", "Kannada", "Tamil"] = Field(
+        default="English",
+        description="Language for the generated recommendation.",
     )
 
 
@@ -96,7 +100,7 @@ def resolve_issue(request: ResolveRequest) -> Dict[str, Any]:
         raise HTTPException(status_code=400, detail="customer_issue cannot be empty.")
 
     try:
-        result = handle_customer_issue(customer_issue=issue_text)
+        result = handle_customer_issue(customer_issue=issue_text, language=request.language)
         return result
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve))
