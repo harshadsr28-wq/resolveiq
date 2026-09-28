@@ -35,6 +35,7 @@ Retaining an outcome does not train or fine-tune the language model. Future lear
 - Markdown-formatted recommendations, including lists and tables
 - Responsive dark interface for desktop and mobile
 
+
 ## Architecture
 
 ```mermaid
@@ -148,3 +149,13 @@ These are potential next steps and are not part of the current implementation.
 
 - **Live demo:** [Add live demo URL](#demo)
 - **Demo video:** [Add demo video URL](#demo)
+## 📸 Screenshots
+
+### Dashboard
+![ResolveIQ Dashboard](./docs/dashboard.png)
+
+### Hindsight Memory & AI Recommendation
+![Hindsight Recommendation](./docs/hindsight-recommendation.png)
+
+### Outcome-Based Learning
+![Outcome Learning](./docs/outcome-learning.png)
