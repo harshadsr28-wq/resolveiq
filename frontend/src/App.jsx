@@ -441,8 +441,9 @@ function IssueSection({ issue, setIssue, onAnalyze, loading, lang, setLang, t })
 }
 
 // ─── Memory Section ───────────────────────────────────────────────
-function MemorySection({ memories, recalledCount, t }) {
-  const count = recalledCount ?? (memories ? memories.length : 0)
+function MemorySection({ memories, t }) {
+  const displayedMemories = (memories || []).slice(0, 5)
+  const count = displayedMemories.length
   return (
     <div className="card fade-up">
       <div className="memory-header-row">
@@ -466,7 +467,7 @@ function MemorySection({ memories, recalledCount, t }) {
         </div>
       ) : (
         <div className="memory-timeline">
-          {memories.map((mem, i) => (
+          {displayedMemories.map((mem, i) => (
             <div className="memory-item" key={i}>
               <div className="memory-dot-col">
                 <div className="memory-dot">{i + 1}</div>
@@ -778,7 +779,7 @@ export default function App() {
             <div className="section-divider-line" />
           </div>
 
-          <MemorySection memories={memories} recalledCount={recalledMemoryCount} t={t} />
+          <MemorySection memories={memories} t={t} />
           <RecommendationSection recommendation={recommendation} memoryCount={recalledMemoryCount} t={t} />
           <OutcomeSection
             issue={issue}
