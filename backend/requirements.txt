@@ -1,0 +1,5 @@
+hindsight-client>=0.10.1
+python-dotenv>=1.2.3
+groq>=1.7.0
+fastapi>=0.141.0
+uvicorn>=0.54.0
